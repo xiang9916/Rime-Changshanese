@@ -11,3 +11,10 @@ RIME Inputting Method of Changshanese
 基于 Rime 的长沙话拼音输入法方案是一种利用了长沙话湘语拼音的输入法方案，如果你知道长沙话怎么讲，那么这个输入法方案就不难理解了
 
 The RIME Inputting Method of Changshanese is an input method that utilizes the pinyin of Changsha, which is easy to understand if you know how to speak Changshanese.
+
+## 拼音方案 拼音方案 Pinyin Method of Changshanese
+爾可以參考我的箇隻知乎專欄文章 https://zhuanlan.zhihu.com/p/644101286
+
+你可以参考我的这个知乎专栏文章
+
+You can refer to this post in zhihu.com
