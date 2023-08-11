@@ -36,20 +36,20 @@ engine:
   segmentors:
     - ascii_segmentor
     - matcher
-    - affix_segmentor@luna_pinyin
-    - affix_segmentor@jyut6ping3
+    #- affix_segmentor@luna_pinyin
+    #- affix_segmentor@jyut6ping3
     - abc_segmentor
     - punct_segmentor
     - fallback_segmentor
   translators:
     - punct_translator
     - script_translator
-    - script_translator@luna_pinyin
-    - script_translator@jyut6ping3
+    #- script_translator@luna_pinyin
+    #- script_translator@jyut6ping3
+    - reverse_lookup_translator
   filters:
     - simplifier
     - uniquifier
-    - reverse_lookup_filter@tupa_reverse_lookup
 
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba
@@ -68,4 +68,29 @@ translator:
   dictionary: Changshanese
   spelling_hints: 8
   comment_format:
-    - "xform/¥/$/" # 永遠顯示拼音
+    - "xform/¥/$/" # 永遠顯示拼音汉字 ]
+    
+
+reverse_lookup:
+  dictionary: luna_pinyin
+  prefix: "`"
+  suffix: "'"
+  tips: 〔拼音〕
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default
+  
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "^`[abcdefghijklmnopqrestuvwxyz]*'?$"
+    
+

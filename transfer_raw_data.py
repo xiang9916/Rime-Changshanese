@@ -115,13 +115,16 @@ def ipa_pinyin(ipa):
     else:
         return syllable
 
+with open('raw\訓詁諧音.csv') as f:
+    import pandas as pd
+    xunguxieyin = pd.read_csv('raw\訓詁諧音.csv', columns = ['IPA', 'tunes', 'words'])
 
-with open('raw/湘音检字.json') as f:
-    xiangyinjianzi = json.load(f)
-    res = []
-    for r in xiangyinjianzi:
-        print((r[3], ipa_pinyin(r[1])))
-        if r[3] != '':
-            res.append((r[3], ipa_pinyin(r[1])))
-    with open('data/湘音检字.json', 'w+', encoding='utf-8') as wf:
-        json.dump(res, wf, ensure_ascii=False)
+# with open('raw/湘音检字.json') as f:
+#     xiangyinjianzi = json.load(f)
+#     res = []
+#     for r in xiangyinjianzi:
+#         print((r[3], ipa_pinyin(r[1])))
+#         if r[3] != '':
+#             res.append((r[3], ipa_pinyin(r[1])))
+#     with open('data/湘音检字.json', 'w+', encoding='utf-8') as wf:
+#         json.dump(res, wf, ensure_ascii=False)
