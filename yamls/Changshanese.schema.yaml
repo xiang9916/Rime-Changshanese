@@ -55,7 +55,10 @@ speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba
   delimiter: " '"
   algebra:
-    - xform/\|.+$//               # 注释
+    - abbrev/^([bcdfghjklprstvwxyz]).+$/$1/ # 注释
+    - derive/zi/ji/
+    - derive/ci/qi/
+    - derive/si/xi/
     - derive/ieu/iu/
     - derive/uei/ui/
     - derive/ao/au/

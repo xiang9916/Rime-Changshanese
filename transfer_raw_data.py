@@ -102,10 +102,10 @@ def ipa_pinyin(ipa):
     syllable = consonant + vowel
     if syllable.startswith('zh') or syllable.startswith('ch') or syllable.startswith('sh'):
         syllable = syllable.replace('zh', 'z').replace('ch', 'c').replace('sh', 's')
-    if syllable.startswith('zii') or syllable.startswith('cii') or syllable.startswith('sii'):
-        pass
-    elif syllable.startswith('zi') or syllable.startswith('ci') or syllable.startswith('si'):
-        syllable = syllable.replace('zi', 'ji').replace('ci', 'qi').replace('si', 'xi')
+    # if syllable.startswith('zii') or syllable.startswith('cii') or syllable.startswith('sii'):
+    #     pass
+    # elif syllable.startswith('zi') or syllable.startswith('ci') or syllable.startswith('si'):
+    #     syllable = syllable.replace('zi', 'ji').replace('ci', 'qi').replace('si', 'xi')
     if syllable.endswith('ang') or syllable.endswith('ong'):
         syllable = syllable.replace('ang', 'ann').replace('ong', 'en')
     if syllable == 'ien':
