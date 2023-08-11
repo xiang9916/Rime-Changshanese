@@ -1,0 +1,68 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: Changshanese
+  name: 長沙話拼音
+  version: "0.10"
+  author:
+    - xiang9916 <xiang.99@outlook.com>
+  description: |
+    「長沙話拼音」目前只救得《湘音檢字》中間的內容，歡迎聯繫我增補擴充
+  dependencies:
+    - luna_pinyin
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: simplification
+    states: [ 漢字, 汉字 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - affix_segmentor@luna_pinyin
+    - affix_segmentor@jyut6ping3
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+    - script_translator@luna_pinyin
+    - script_translator@jyut6ping3
+  filters:
+    - simplifier
+    - uniquifier
+    - reverse_lookup_filter@tupa_reverse_lookup
+
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcba
+  delimiter: " '"
+  algebra:
+    - xform/\|.+$//               # 注释
+    - derive/ieu/iu/
+    - derive/uei/ui/
+    - derive/ao/au/
+    - derive/ou/eu/
+
+translator:
+  dictionary: Changshanese
+  spelling_hints: 8
+  comment_format:
+    - "xform/¥/$/" # 永遠顯示拼音

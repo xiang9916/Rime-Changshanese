@@ -18,3 +18,8 @@ The RIME Inputting Method of Changshanese is an input method that utilizes the p
 你可以参考我的这个知乎专栏文章
 
 You can refer to this post in zhihu.com
+
+|  表头  |  表头  |
+|  ----  |  ----  |
+| 单元格  | 单元格 |
+| 单元格  | 单元格 |
