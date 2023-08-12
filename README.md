@@ -12,6 +12,10 @@ RIME Inputting Method of Changshanese
 
 The RIME Inputting Method of Changshanese is an input method that utilizes the pinyin of Changsha, which is easy to understand if you know how to speak Changshanese.
 
+## 安裝
+
+參見 https://github.com/xiang9916/Rime-Changshanese/releases/
+
 ## 拼音方案 拼音方案 Pinyin Method of Changshanese
 爾可以參考我的箇隻知乎專欄文章 https://zhuanlan.zhihu.com/p/644101286
 
