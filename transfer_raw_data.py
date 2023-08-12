@@ -90,7 +90,7 @@ def ipa_pinyin(ipa):
     elif ipa.endswith('əȵ̍')    and not(ipa.endswith('uəȵ̍')): vowel = 'en'
     elif ipa.endswith('uəȵ̍'):  vowel = 'uen'
     elif ipa.endswith('iȵ̍'):   vowel = 'in'
-    elif ipa.endswith('yȵ̍'):   vowel = 'yn'
+    elif ipa.endswith('yȵ̍'):   vowel = 'yun'
 
     elif ipa.endswith('aŋ')    and not(ipa.endswith('iaŋ') or ipa.endswith('uaŋ') or ipa.endswith('yaŋ')): vowel = 'ang'
     elif ipa.endswith('iaŋ'):  vowel = 'iang'
@@ -120,7 +120,7 @@ def ipa_pinyin(ipa):
     else:
         return syllable
 
-with open('raw\訓詁諧音.csv') as f:
+with open('raw\訓詁諧音.csv', encoding='utf-8') as f:
     import pandas as pd
     res = []
     xunguxieyin = pd.read_csv('raw\訓詁諧音.csv', header=None)
@@ -133,7 +133,7 @@ with open('raw\訓詁諧音.csv') as f:
         json.dump(res, wf, ensure_ascii=False)
 
 
-with open('raw/湘音检字.json') as f:
+with open('raw/湘音检字.json', encoding='utf-8') as f:
     xiangyinjianzi = json.load(f)
     res = []
     for r in xiangyinjianzi:
