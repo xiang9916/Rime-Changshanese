@@ -23,7 +23,7 @@ with open('yamls/Changshanese.dict.yaml', 'w+', encoding='utf-8') as f:
     f.writelines('# encoding: utf-8\n')
     f.writelines('# auto-generated, do not edit directly\n')    
     f.writelines('---\n')
-    f.writelines('name: "Changsha"\n')
+    f.writelines('name: "Changshanese"\n')
     f.writelines('version: "0.10"\n')
     f.writelines('sort: by_weight\n')
     f.writelines('use_preset_vocabulary: true\n')
