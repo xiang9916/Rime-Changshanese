@@ -10,7 +10,7 @@ for filename in filelist:
     if filename == '.DS_Store':
         continue
     print(filename)
-    with open('data/{}'.format(filename)) as f:
+    with open('data/{}'.format(filename), encoding='utf-8') as f:
         dictionary = json.load(f)
         total_dictionary_list.extend(dictionary)
 total_dictionary = []
@@ -18,7 +18,7 @@ for r in total_dictionary_list:
     total_dictionary.append((r[0], r[1]))
 total_dictionary = list({}.fromkeys(total_dictionary).keys())
 
-with open('yamls/Changshanese.dict.yaml', 'w+') as f:
+with open('yamls/Changshanese.dict.yaml', 'w+', encoding='utf-8') as f:
     f.writelines('# Rime dictionary\n')
     f.writelines('# encoding: utf-8\n')
     f.writelines('# auto-generated, do not edit directly\n')    
