@@ -4,11 +4,11 @@
 schema:
   schema_id: Changshanese
   name: 長沙話拼音
-  version: "0.10"
+  version: "0.20"
   author:
     - xiang9916 <xiang.99@outlook.com>
   description: |
-    「長沙話拼音」目前只救得《湘音檢字》中間的內容，歡迎聯繫我增補擴充
+    「長沙話拼音」目前只救得《湘音檢字》《训诂谐音》中間的內容，歡迎聯繫我增補擴充
   dependencies:
     - luna_pinyin
 

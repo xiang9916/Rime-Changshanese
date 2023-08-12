@@ -2,8 +2,8 @@
 # encoding: utf-8
 # auto-generated, do not edit directly
 ---
-name: "Changsha"
-version: "0.10"
+name: "Changshanese"
+version: "0.20"
 sort: by_weight
 use_preset_vocabulary: true
 max_phrase_length: 7
