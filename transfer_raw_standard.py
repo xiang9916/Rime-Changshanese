@@ -1,5 +1,6 @@
-import re
 import json
+import os
+import re
 
 def ipa_pinyin(ipa):
     error = 0
@@ -184,7 +185,7 @@ with open('raw/長沙.csv', encoding='utf-8') as f:
         # print(xunguxieyin.loc[r, 2])
         for w in re.sub(u'|\(.*?\)|\{.*?\}|\[.*?\]', '',xunguxieyin.loc[r, 2]):
             if not(w in '-=□'): res.append((w, pinyin))
-    with open('standard/长沙.json', 'w+', encoding='utf-8') as wf:
+    with open('standard/長沙.json', 'w+', encoding='utf-8') as wf:
         json.dump(res, wf, ensure_ascii=False)
 
 # with open('raw/湘音检字.json', encoding='utf-8') as f:
@@ -197,3 +198,21 @@ with open('raw/長沙.csv', encoding='utf-8') as f:
 #     with open('standard/湘音检字.json', 'w+', encoding='utf-8') as wf:
 #         json.dump(res, wf, ensure_ascii=False)
 
+filelist = os.listdir('standard')
+if '.DS_store' in filelist:
+    del filelist['.DS_store']
+
+total_dictionary_list = []
+for filename in filelist:
+    if filename == '.DS_Store':
+        continue
+    print(filename)
+    with open('standard/{}'.format(filename), encoding='utf-8') as f:
+        dictionary = json.load(f)
+        total_dictionary_list.extend(dictionary)
+total_dictionary = []
+for r in total_dictionary_list:
+    total_dictionary.append((r[0], r[1]))
+total_dictionary = list({}.fromkeys(total_dictionary).keys())
+with open('standard/total.json', 'w+', encoding='utf-8') as wf:
+        json.dump(res, wf, ensure_ascii=False)
