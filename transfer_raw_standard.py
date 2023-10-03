@@ -130,7 +130,7 @@ def ipa_pinyin(ipa):
     elif ipa.endswith('yaŋ') or ipa.endswith('yɑŋ'):  vowel = 'yaŋ'
     elif ipa.endswith('oŋ')    and not(ipa.endswith('ioŋ')): vowel = 'oŋ'
     elif ipa.endswith('ioŋ'):  vowel = 'ioŋ'
-    elif (ipa.endswith('əŋ'))  and not(ipa.endswith('iəŋ') or ipa.endswith('uəŋ') or ipa.endswith('yəŋ')): vowel = 'eng'
+    elif (ipa.endswith('əŋ'))  and not(ipa.endswith('iəŋ') or ipa.endswith('uəŋ') or ipa.endswith('yəŋ')): vowel = 'əŋ'
     elif ipa.endswith('iəŋ'):  vowel = 'iŋ'
     
     else: error = 1
@@ -215,4 +215,4 @@ for r in total_dictionary_list:
     total_dictionary.append((r[0], r[1]))
 total_dictionary = list({}.fromkeys(total_dictionary).keys())
 with open('standard/total.json', 'w+', encoding='utf-8') as wf:
-        json.dump(res, wf, ensure_ascii=False)
+    json.dump(total_dictionary, wf, ensure_ascii=False)

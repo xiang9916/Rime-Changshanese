@@ -73,7 +73,7 @@ def ipa_pinyin(ipa):
         'iẽ', 'iɛn',
         'yẽ', 'yɛn',
         'õ', 'ɔn', 'on',
-        'in', 'iȵ̍', 'uən', 'uəȵ̍', 'yn', 'yȵ̍',
+        'in', 'iŋ', 'uən', 'uəȵ̍', 'yn', 'yȵ̍',
         'iaŋ', 'iɑŋ',
         'oŋ',
         'ioŋ',
@@ -110,28 +110,22 @@ def ipa_pinyin(ipa):
     elif (ipa.endswith('əu') or ipa.endswith('ɵʊ')) and not(ipa.endswith('iəu') or ipa.endswith('iɵʊ')): vowel = 'ou'
     elif ipa.endswith('iəu') or ipa.endswith('iɵʊ'): vowel = 'iou'
 
-    elif (ipa.endswith('ã') or ipa.endswith('an'))     and not(ipa.endswith('iã') or ipa.endswith('ian') or ipa.endswith('uã') or ipa.endswith('uan') or ipa.endswith('yã') or ipa.endswith('yan')): vowel = 'ann'
-    elif ipa.endswith('iã') or ipa.endswith('ian'):   vowel = 'iann'
-    elif ipa.endswith('uã') or ipa.endswith('uan'):   vowel = 'uann'
-    elif ipa.endswith('yã') or ipa.endswith('yan'):   vowel = 'yuann'
+    elif (ipa.endswith('ã') or ipa.endswith('aŋ'))     and not(ipa.endswith('iã') or ipa.endswith('iaŋ') or ipa.endswith('uã') or ipa.endswith('uan') or ipa.endswith('uaŋ') or ipa.endswith('yã') or ipa.endswith('yan') or ipa.endswith('yaŋ')): vowel = 'ann'
+    elif ipa.endswith('iã') or ipa.endswith('iaŋ'):   vowel = 'iann'
+    elif ipa.endswith('uã') or ipa.endswith('uaŋ'):   vowel = 'uann'
+    elif ipa.endswith('yã') or ipa.endswith('yaŋ'):   vowel = 'yuann'
     elif (ipa.endswith('ə̃') or ipa.endswith('ɛn')) and not(ipa.endswith('iẽ') or ipa.endswith('iɛn') or ipa.endswith('yẽ') or ipa.endswith('yɛn')): vowel = 'enn'
     elif ipa.endswith('iẽ') or ipa.endswith('iɛn'):   vowel = 'ienn'
     elif ipa.endswith('yẽ') or ipa.endswith('yɛn'):   vowel = 'yuenn'
     elif ipa.endswith('õ') or ipa.endswith('ɔn') or ipa.endswith('on'): vowel = 'onn'
 
-    elif (ipa.endswith('ən') or ipa.endswith('əȵ̍')) and not(ipa.endswith('uən') or ipa.endswith('uəȵ̍')): vowel = 'en'
-    elif ipa.endswith('uən') or ipa.endswith('uəȵ̍'):  vowel = 'uen'
-    elif ipa.endswith('in')  or ipa.endswith('iȵ̍'):   vowel = 'in'
-    elif ipa.endswith('yn')  or ipa.endswith('yȵ̍'):   vowel = 'yun'
+    elif (ipa.endswith('ən') or ipa.endswith('əŋ')) and not(ipa.endswith('uən') or ipa.endswith('uəŋ')): vowel = 'en'
+    elif ipa.endswith('uən') or ipa.endswith('uəŋ'):  vowel = 'uen'
+    elif ipa.endswith('in')  or ipa.endswith('iŋ'):   vowel = 'in'
+    elif ipa.endswith('yn'):   vowel = 'yun'
 
-    elif (ipa.endswith('aŋ') or ipa.endswith('ɑŋ')) and not(ipa.endswith('iaŋ') or ipa.endswith('iɑŋ') or ipa.endswith('uaŋ') or ipa.endswith('uɑŋ') or ipa.endswith('yaŋ') or ipa.endswith('yɑŋ')): vowel = 'aŋ'
-    elif ipa.endswith('iaŋ') or ipa.endswith('iɑŋ'):  vowel = 'iang'
-    elif ipa.endswith('uaŋ') or ipa.endswith('uɑŋ'):  vowel = 'uang'
-    elif ipa.endswith('yaŋ') or ipa.endswith('yɑŋ'):  vowel = 'yuang'
     elif ipa.endswith('oŋ')    and not(ipa.endswith('ioŋ')): vowel = 'ong'
     elif ipa.endswith('ioŋ'):  vowel = 'iong'
-    elif (ipa.endswith('əŋ'))  and not(ipa.endswith('iəŋ') or ipa.endswith('uəŋ') or ipa.endswith('yəŋ')): vowel = 'eng'
-    elif ipa.endswith('iəŋ'):  vowel = 'ing'
     elif ipa in [
             'm', 'n'
     ]: vowel = ''
