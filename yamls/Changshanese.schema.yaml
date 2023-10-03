@@ -4,7 +4,7 @@
 schema:
   schema_id: Changshanese
   name: 長沙話拼音
-  version: "0.20"
+  version: "0.30"
   author:
     - xiang9916 <xiang.99@outlook.com>
   description: |
@@ -59,10 +59,17 @@ speller:
     - derive/zi/ji/
     - derive/ci/qi/
     - derive/si/xi/
+    - derive/zh/z/
+    - derive/ch/c/
+    - derive/sh/s/
     - derive/ieu/iu/
     - derive/uei/ui/
     - derive/ao/au/
     - derive/ou/eu/
+    - derive/ong/en/
+    - derive/ann/an/
+    - derive/onn/on/
+    - derive/enn/en/
 
 translator:
   dictionary: Changshanese

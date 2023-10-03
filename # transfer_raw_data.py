@@ -31,7 +31,7 @@ def ipa_pinyin(ipa):
     elif ipa.startswith('ŋ'): consonant = 'ng'
     elif ipa.startswith('x'): consonant = 'h'
         # jqx
-    elif ipa.startswith('tɕ'): consonant = 'j'
+    elif ipa.startswith('tɕ') and not(ipa.startswith('tɕʰ')): consonant = 'j'
     elif ipa.startswith('tɕʰ'): consonant = 'q'
     elif ipa.startswith('ɕ'): consonant = 'x'
         # 来日

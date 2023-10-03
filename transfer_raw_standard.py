@@ -6,8 +6,8 @@ def ipa_pinyin(ipa):
     error = 0
     consonant = '0'
     vowel = '0'
-    if ipa == 'm̩': return 'm'
-    if ipa == 'n̩': return 'n'
+    if ipa == 'm̩': return 'm̩'
+    if ipa == 'n̩': return 'n̩'
     # 声母
         # 帮
     if ipa.startswith('p') and not(ipa.startswith('pʰ')): consonant = 'p'
@@ -33,7 +33,7 @@ def ipa_pinyin(ipa):
     elif ipa.startswith('ŋ'): consonant = 'ŋ'
     elif ipa.startswith('x'): consonant = 'x'
         # jqx
-    elif ipa.startswith('tɕ'): consonant = 'tɕ'
+    elif ipa.startswith('tɕ') and not(ipa.startswith('tɕʰ')): consonant = 'tɕ'
     elif ipa.startswith('tɕʰ'): consonant = 'tɕʰ'
     elif ipa.startswith('ɕ'): consonant = 'ɕ'
         # 来日
@@ -97,7 +97,7 @@ def ipa_pinyin(ipa):
     elif ipa.endswith('ə') or ipa.endswith('ɘ') and not(ipa.endswith('uə') or ipa.endswith('uɘ')): vowel = 'ə'
     elif ipa.endswith('ie'):   vowel = 'ie'
     elif ipa.endswith('uə') or ipa.endswith('uɘ'): vowel = 'uə'    
-    elif ipa.endswith('ye'):   vowel = 'yue'
+    elif ipa.endswith('ye'):   vowel = 'ye'
 
     elif (ipa.endswith('ai') or ipa.endswith('aɪ') or ipa.endswith('ɐɛ')) and not(ipa.endswith('uai') or ipa.endswith('uaɪ') or ipa.endswith('uɐɛ') or ipa.endswith('yai') or ipa.endswith('yaɪ') or ipa.endswith('yɐɛ')): vowel = 'ai'
     elif ipa.endswith('uai') or ipa.endswith('uaɪ') or ipa.endswith('uɐɛ'):  vowel = 'uai'
@@ -111,8 +111,8 @@ def ipa_pinyin(ipa):
     elif ipa.endswith('iəu') or ipa.endswith('iɵʊ'): vowel = 'iəu'
 
     elif (ipa.endswith('ã') or ipa.endswith('an'))     and not(ipa.endswith('iã') or ipa.endswith('ian') or ipa.endswith('uã') or ipa.endswith('uan') or ipa.endswith('yã') or ipa.endswith('yan')): vowel = 'ã'
-    elif ipa.endswith('iã') or ipa.endswith('ian'):   vowel = 'iann'
-    elif ipa.endswith('uã') or ipa.endswith('uan'):   vowel = 'uann'
+    elif ipa.endswith('iã') or ipa.endswith('ian'):   vowel = 'iã'
+    elif ipa.endswith('uã') or ipa.endswith('uan'):   vowel = 'uã'
     elif ipa.endswith('yã') or ipa.endswith('yan'):   vowel = 'yã'
     elif (ipa.endswith('ɘ̃') or ipa.endswith('ɛn')) and not(ipa.endswith('iẽ') or ipa.endswith('iɛn') or ipa.endswith('yẽ') or ipa.endswith('yɛn')): vowel = 'ə̃'
     elif ipa.endswith('iẽ') or ipa.endswith('iɛn'):   vowel = 'iẽ'
@@ -128,10 +128,10 @@ def ipa_pinyin(ipa):
     elif ipa.endswith('iaŋ') or ipa.endswith('iɑŋ'):  vowel = 'iaŋ'
     elif ipa.endswith('uaŋ') or ipa.endswith('uɑŋ'):  vowel = 'uaŋ'
     elif ipa.endswith('yaŋ') or ipa.endswith('yɑŋ'):  vowel = 'yaŋ'
-    elif ipa.endswith('oŋ')    and not(ipa.endswith('ioŋ')): vowel = 'ong'
-    elif ipa.endswith('ioŋ'):  vowel = 'iong'
+    elif ipa.endswith('oŋ')    and not(ipa.endswith('ioŋ')): vowel = 'oŋ'
+    elif ipa.endswith('ioŋ'):  vowel = 'ioŋ'
     elif (ipa.endswith('əŋ'))  and not(ipa.endswith('iəŋ') or ipa.endswith('uəŋ') or ipa.endswith('yəŋ')): vowel = 'eng'
-    elif ipa.endswith('iəŋ'):  vowel = 'ing'
+    elif ipa.endswith('iəŋ'):  vowel = 'iŋ'
     
     else: error = 1
 
@@ -142,8 +142,8 @@ def ipa_pinyin(ipa):
     #     pass
     # elif syllable.startswith('zi') or syllable.startswith('ci') or syllable.startswith('si'):
     #     syllable = syllable.replace('zi', 'ji').replace('ci', 'qi').replace('si', 'xi')
-    if syllable.endswith('ng'):
-        syllable = syllable.replace('ang', 'ann').replace('ong', 'en').replace('eng', 'en').replace('ing','in')
+    # if syllable.endswith('ng'):
+    #     syllable = syllable.replace('ang', 'ann').replace('ong', 'en').replace('eng', 'en').replace('ing','in')
     if syllable == 'ien':
         syllable = 'in'
     if error == 1:
