@@ -107,8 +107,8 @@ def ipa_pinyin(ipa):
     elif ipa.endswith('yɘi') or ipa.endswith('yɘɪ'): vowel = 'yuei'
     elif (ipa.endswith('au') or ipa.endswith('ɐɔ') or ipa.endswith('ɑʊ')) and not(ipa.endswith('iau') or ipa.endswith('iɐɔ') or ipa.endswith('iɑʊ')): vowel = 'au'
     elif ipa.endswith('iau') or ipa.endswith('iɐɔ') or ipa.endswith('iɑʊ'): vowel = 'iau'
-    elif (ipa.endswith('əu') or ipa.endswith('ɵʊ')) and not(ipa.endswith('iəu') or ipa.endswith('iɵʊ')): vowel = 'eu'
-    elif ipa.endswith('iəu') or ipa.endswith('iɵʊ'): vowel = 'ieu'
+    elif (ipa.endswith('əu') or ipa.endswith('ɵʊ')) and not(ipa.endswith('iəu') or ipa.endswith('iɵʊ')): vowel = 'ou'
+    elif ipa.endswith('iəu') or ipa.endswith('iɵʊ'): vowel = 'iou'
 
     elif (ipa.endswith('ã') or ipa.endswith('an'))     and not(ipa.endswith('iã') or ipa.endswith('ian') or ipa.endswith('uã') or ipa.endswith('uan') or ipa.endswith('yã') or ipa.endswith('yan')): vowel = 'ann'
     elif ipa.endswith('iã') or ipa.endswith('ian'):   vowel = 'iann'
