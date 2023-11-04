@@ -60,8 +60,8 @@ def ipa_pinyin(ipa):
         'uai', 'uaɪ', 'uɐɛ',
 
         'ɘi', 'ei',
-        'uɘi', 'uei',
-        'yɘi', 'yɘɪ',
+        'uei',
+        'yei',
 
         'au', 'əu',
         'iau', 'iɐɔ', 'iɑʊ',
