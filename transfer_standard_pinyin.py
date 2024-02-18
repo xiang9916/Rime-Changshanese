@@ -121,11 +121,11 @@ def ipa_pinyin(ipa):
 
     elif (ipa.endswith('ən') or ipa.endswith('əŋ')) and not(ipa.endswith('uən') or ipa.endswith('uəŋ')): vowel = 'en'
     elif ipa.endswith('uən') or ipa.endswith('uəŋ'):  vowel = 'uen'
-    elif ipa.endswith('in')  or ipa.endswith('iŋ'):   vowel = 'in'
+    elif ipa.endswith('in'):   vowel = 'in'
     elif ipa.endswith('yn'):   vowel = 'yun'
 
-    elif ipa.endswith('oŋ')    and not(ipa.endswith('ioŋ')): vowel = 'ong'
-    elif ipa.endswith('ioŋ'):  vowel = 'iong'
+    elif ipa.endswith('əŋ')    and not(ipa.endswith('iəŋ')): vowel = 'ong'
+    elif ipa.endswith('iəŋ'):  vowel = 'iong'
     elif ipa in [
             'm', 'n'
     ]: vowel = ''

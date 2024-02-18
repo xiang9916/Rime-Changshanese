@@ -20,7 +20,7 @@ while 1:
         exists = []
         for i in ipas:
             if word == i[0]:
-                middle_i = i[1].replace('si', 'ɕi').replace('sʰi', 'ɕʰi').replace('ʃ', 's').replace('ʅ', 'ɿ').replace('əŋ', 'ən').replace('iən', 'in')
+                middle_i = i[1]
                 if middle_i in exists:
                     pass
                 elif in_list == 0:
@@ -36,7 +36,7 @@ while 1:
         exists = []
         for i in pinyins:
             if word == i[0]:
-                middle_i = i[1].replace('zi', 'ji').replace('ci', 'qi').replace('si', 'xi').replace('jii', 'zii').replace('qii', 'cii').replace('xii', 'sii').replace('zh', 'z').replace('ch', 'c').replace('sh', 's').replace('iong', 'in').replace('ong', 'en')
+                middle_i = i[1]
                 if middle_i in exists:
                     pass
                 elif in_list == 0:
